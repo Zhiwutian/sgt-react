@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
 
-export default () => {
+export default function Grade(props) {
   return (
     <tr>
-      <td></td>
+      <td>{props.studentData.name}</td>
+      <td>{props.studentData.course}</td>
+      <td>{props.studentData.grade}</td>
     </tr>
-  )
+  );
 }
