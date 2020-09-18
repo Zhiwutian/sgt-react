@@ -11,11 +11,17 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch("/api/grades", { method: "GET" })
+    .then(resp => resp.json())
+    .then(resp => this.setState({ grades: resp }));
+  }
+
   render() {
     return (
       <div>
         <Header/>
-        <GradeTable/>
+        <GradeTable grades={this.state.grades}/>
       </div>
     );
   }

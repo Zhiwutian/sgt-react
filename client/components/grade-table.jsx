@@ -1,8 +1,12 @@
 import React from 'react';
 
-export default class GradeTable extends React.Component {
+export default (props) => {
 
-  render() {
+
+
+    if (!this.props.grades.length) {
+      return <h1>No grades available</h1>
+    }
 
     return (
       <table className="table col-10 offset-1">
@@ -14,8 +18,9 @@ export default class GradeTable extends React.Component {
           </tr>
         </thead>
         <tbody>
+          {}
         </tbody>
       </table>
-    );
-  }
+    )
+
 }
