@@ -17,6 +17,18 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 100
+    },
+    {
+      "name": "Brett Albright",
+      "course": "SGT React",
+      "grade": "85",
+      "id": 33
+    },
+    {
+      "name": "Jiminy Cricket",
+      "course": "motivational speaker",
+      "grade": "88",
+      "id": 34
     }
   ]
 }
