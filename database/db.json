@@ -17,6 +17,12 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 100
+    },
+    {
+      "name": "Brett Albright",
+      "course": "SGT React",
+      "grade": "85",
+      "id": 33
     }
   ]
 }
