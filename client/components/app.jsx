@@ -11,6 +11,8 @@ class App extends React.Component {
       grades: []
     };
     this.addStudentToServer = this.addStudentToServer.bind(this);
+    this.deleteStudentFromServer = this.deleteStudentFromServer.bind(this);
+
   }
 
   componentDidMount() {
@@ -36,6 +38,17 @@ class App extends React.Component {
       });
   }
 
+  deleteStudentFromServer(studentId) {
+    const options = {
+      method: "DELETE"
+    };
+    fetch('/api/grades/' + studentId, options)
+      .then(resp => resp.json())
+      .then(resp => {
+        const new
+      });
+  }
+
   getAverageGrade() {
     if (this.state.grades.length) {
       const total = this.state.grades.reduce((gradeTotal, currentGrade) => gradeTotal + parseInt(currentGrade.grade), 0);
@@ -53,7 +66,7 @@ class App extends React.Component {
         <Header averageGrade={this.getAverageGrade()}/>
         <div className="d-flex">
           <div className="col-9">
-            <GradeTable grades={this.state.grades}/>
+            <GradeTable grades={this.state.grades} deleteCallback={this.deleteStudentFromServer}/>
           </div>
           <div className="col-3">
             <GradeForm addStudent={this.addStudentToServer}/>
