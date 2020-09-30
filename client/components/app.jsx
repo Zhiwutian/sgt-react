@@ -40,12 +40,14 @@ class App extends React.Component {
 
   deleteStudentFromServer(studentId) {
     const options = {
-      method: "DELETE"
+      method: 'DELETE'
     };
     fetch('/api/grades/' + studentId, options)
       .then(resp => resp.json())
       .then(resp => {
-        const new
+        const gradesCopy = this.state.grades.slice(0);
+        const currentStudents = gradesCopy.filter(student => student.id !== studentId);
+        this.setState({ grades: currentStudents });
       });
   }
 
