@@ -45,8 +45,7 @@ class App extends React.Component {
     fetch('/api/grades/' + studentId, options)
       .then(resp => resp.json())
       .then(resp => {
-        const gradesCopy = this.state.grades.slice(0);
-        const currentStudents = gradesCopy.filter(student => student.id !== studentId);
+        const currentStudents = this.state.grades.filter(student => student.id !== studentId);
         this.setState({ grades: currentStudents });
       });
   }
