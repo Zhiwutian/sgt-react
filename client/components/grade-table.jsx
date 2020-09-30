@@ -14,10 +14,11 @@ export default function GradeTable(props) {
           <th>Student Name</th>
           <th>Course</th>
           <th>Grade</th>
+          <th>Operations</th>
         </tr>
       </thead>
       <tbody>
-        {props.grades.map(grade => <Grade key={grade.id} studentData={grade}/>)}
+        {props.grades.map(grade => <Grade key={grade.id} studentData={grade} deleteStudent={props.deleteCallback}/>)}
       </tbody>
     </table>
   );
